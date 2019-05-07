@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="tsux.me" />
+    <meta name="description" content="{{ description }}" />
+    <meta name="keywords" content="{{ keywords }}" />
+    <meta name="robots" content="{{ robots }}" />
+    <meta property="og:site_name" content="京大フィットネスサークル GORILLA" />
+    <meta property="og:type" content="{{ type }}" />
+    <meta property="og:title" content="京大フィットネスサークル GORILLA" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{% static 'img/logo.gif' %}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <base href="{{ request.build_absolute_uri }}" target="_self">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style-mobile.css' %}" media="screen and (max-width: 599px)" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen and (min-width: 600px)" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>京大フィットネスサークル GORILLA</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <h1 class="logo"><img src="{% static 'img/logo.gif' %}" alt="京大フィットネスサークル GORILLA">京大フィットネスサークル GORILLA</h1>
+        <nav class="nav">
+            <ul class="list">
+                <li class="item selected"><a href="{% url 'index' %}">HOME</a></li>
+                <li class="item"><a href="{% url 'index' 'activity' %}">ACTIVITY</a></li>
+                <li class="item"><a href="{% url 'index' 'schedule' %}">SCHEDULE</a></li>
+                <li class="item"><a href="{% url 'index' 'blog' %}">BLOG</a></li>
+            </ul>
+        </nav>
+        <img class="menu-icon" src="{% static 'img/menu.png' %}" alt="menu">
+    </header>
+    <div class="wrapper clearfix">
+        {% block contents %}
+        {% endblock %}
+        <aside class="aside">
+            <div class="tweet">
+                <a class="twitter-timeline" width="100%" height="100%" href="https://twitter.com/KU_fitnessclub?ref_src=twsrc%5Etfw">Tweets by KU_fitnessclub</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="follow-button">
+                <a href="https://twitter.com/KU_fitnessclub?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="ja" data-show-count="false">Follow @KU_fitnessclub</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="foot-wrap">
+            <div class="foot-item sns">
+                <div class="head">SHARE</div>
+                <ul class="list">
+                    <li>
+                        <div class="item facebook">
+                            <a href="" target="_blank" title="Facebookでシェア">
+                                <img src="{% static 'img/facebook.png' %}" alt="facebook">
+                                <span>Facebookでつぶやく</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item twitter">
+                            <a href="" target="_blank" title="Twitterでシェア">
+                                <img src="{% static 'img/twitter.png' %}" alt="twitter">
+                                <span>Tweetする</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item line">
+                            <a href="" target="_blank" title="LINEに送る">
+                                <img src="{% static 'img/line.png' %}" alt="LINE">
+                                <span>LINEに送る</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-item others">
+                <div class="head">OTHERS</div>
+                <ul class="list">
+                    <li class="item"><a href="{% url 'index' %}">TOP</a></li>
+                    <li class="item"><a href="{% url 'index' 'sitemap' %}">SITE MAP</a></li>
+                    <li class="item"><a href="mailto:ku.fitnessteam@gmail.com">E-MAIL</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">©️ 2018 - {{ tihs_year }} 京大フィットネスサークル GORILLA</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+RewriteEngine On 
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^(gorilla-kufitness.info) [NC] 
+RewriteRule ^(.*)$ https://www.gorilla-kufitness.info/$1 [R=301,L] 
+

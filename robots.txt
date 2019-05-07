@@ -1,0 +1,3 @@
+User-agent : *
+Disallow : https://www.gorilla-kufitness.info/block/
+Sitemap : https://www.gorilla-kufitness.info/sitemap.xml
